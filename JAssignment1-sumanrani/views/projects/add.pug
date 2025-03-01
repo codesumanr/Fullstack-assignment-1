@@ -1,0 +1,16 @@
+extends ../common/layout
+
+block layout-content
+  h2 Add a Project
+  form(action="/projects/add/submit", method="POST")
+    .form-experience
+      label(for="name") Name:
+      input(type="text", id="name", name="name", placeholder="MY HTML Learning App", required)
+    .form-experience
+      label(for="summary") Summary:
+      textarea(id="summary", name="summary", rows="4", cols="50", placeholder="Enter a comprehensive project summary", required)
+    .form-experience
+      label(for="technology") Technologies Used:
+      input(type="text", id="technology", name="technology", placeholder="HTML, CSS, JavaScript", required)
+    .form-experience
+      button(type="submit" class="btn btn-primary add-btn") Add Project

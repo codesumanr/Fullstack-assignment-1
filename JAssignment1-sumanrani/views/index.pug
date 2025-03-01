@@ -1,0 +1,37 @@
+extends ../common/layout
+
+block content
+  h1 My Portfolio
+
+  //- Personal Image Section
+  section.personal-image
+    img.profile-img(src="/images/my-photo.jpg", alt="My Photo")
+
+  //- Skills Section
+  section.skills
+    h2 My Skills
+    ul.skills-list
+      li HTML5
+      li CSS3
+      li JavaScript
+      li Node.js
+      li Express
+      li MongoDB
+      li Pug
+      //- Add more skills as needed
+
+  //- Projects Section
+  section.projects
+    h2 Portfolio Projects
+    if projects && projects.length
+      each project in projects
+        .project
+          h3= project.title
+          if project.imageUrl
+            img.project-img(src=project.imageUrl, alt=project.title)
+          p= project.description
+          if project.link
+            p
+              a(href=project.link, target="_blank") View Project
+    else
+      p No projects available at the moment.

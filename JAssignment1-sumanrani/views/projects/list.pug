@@ -1,0 +1,21 @@
+extends ../common/layout
+
+block layout-content
+  h2 Project List
+  if projects && projects.length
+    each project in projects
+      .project
+        h3= project.name
+        p
+          strong Summary: 
+          | #{project.summary}
+        p
+          strong Technologies: 
+          | #{project.technology}
+        if project.status
+          p
+            strong Status: 
+            | #{project.status}
+       
+  else
+    p No projects found.
